@@ -6,19 +6,6 @@ public class GestorContactos {
 	private static List<Contacto> contactos = new ArrayList<>();
 
 	public static void main(String[] args) {
-	    Contacto contacto1 = new Contacto();
-        Contacto contacto2 = new Contacto();
-        Contacto contacto3 = new Contacto();
-        Contacto contacto4 = new Contacto();
-
-        contacto1.setTelefono("23341018");
-        contacto2.setTelefono("57071052");
-        contacto3.setTelefono("23342924");
-        contacto4.setTelefono("23628138");
-        contactos.add(contacto1);
-        contactos.add(contacto2);
-        contactos.add(contacto3);
-        contactos.add(contacto4);
 
 		int opcion;
 		do {
