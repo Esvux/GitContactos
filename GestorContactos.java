@@ -60,6 +60,30 @@ public class GestorContactos {
 		}
 	}
 
-	private static void mostrarFiltrados() {}
+	private static void mostrarFiltrados() {
+		if (contactos.size() == 0) {
+			System.out.println("No existen contactos para buscar");
+			return;
+		}
+		System.out.print("Ingrese el texto a buscar: ");
+		String busqueda = scan.next();
+		int contador = 0;
+		boolean tituloMostrado = false;
+		for (Contacto temp : contactos) {
+			if (temp.getNombre().toLowerCase().contains(busqueda.toLowerCase()) || temp.getApellido().toLowerCase().contains(busqueda.toLowerCase())) {
+				if (tituloMostrado == false) {
+					System.out.printf("%s %20s %20s %20s", "Nombre", "Apellido", "Fecha de Nacimiento", "Telefono");
+					System.out.println();
+					tituloMostrado = true;
+				}
+				System.out.format("%s%20s%20s%20s", temp.getNombre(), temp.getApellido(), temp.getFechaNacimiento(), temp.getTelefono());
+				System.out.println();
+				contador++;
+			}
+		}
+		if (contador == 0) {
+			System.out.println("No hay contactos con la información ingresada");
+		}
+	}
 
 }
