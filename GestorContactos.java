@@ -54,7 +54,9 @@ public class GestorContactos {
         b.setTelefono(numeroEliminar);
         if(contactos.contains(b)) {
             contactos.remove(b);
-        }
+        } else {
+			System.out.println("N\u00FAmero no encontrado: " + numeroEliminar);
+		}
 	}
 
 	private static void mostrarTodos() {}
