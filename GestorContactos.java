@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class GestorContactos {
-	
+
 	private static Scanner scan = new Scanner(System.in);
 	private static List<Contacto> contactos = new ArrayList<>();
 
@@ -29,10 +29,10 @@ public class GestorContactos {
 					//eliminarContacto();
 					break;
 				case 3:
-					//mostrarTodos();
+					mostrarTodos();
 					break;
 				case 4:
-					//mostrarFiltrados();
+					mostrarFiltrados();
 					break;
 				case 0:
 					System.out.println("\n\nBye ;)");
@@ -47,7 +47,18 @@ public class GestorContactos {
 
 	private static void eliminarContacto() {}
 
-	private static void mostrarTodos() {}
+	private static void mostrarTodos() {
+		if (contactos.size() == 0) {
+			System.out.println("No existen contactos para mostrar");
+			return;
+		}
+		System.out.printf("%s %20s %20s %20s", "Nombre", "Apellido", "Fecha de Nacimiento", "Telefono");
+		System.out.println();
+		for (Contacto temp : contactos) {
+			System.out.format("%s%20s%20s%20s", temp.getNombre(), temp.getApellido(), temp.getFechaNacimiento(), temp.getTelefono());
+			System.out.println();
+		}
+	}
 
 	private static void mostrarFiltrados() {}
 
