@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Contacto {
 
 	private String nombre;
@@ -37,4 +39,16 @@ public class Contacto {
 		this.telefono = telefono;
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Contacto contacto = (Contacto) o;
+		return telefono.equals(contacto.telefono);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(telefono);
+	}
 }

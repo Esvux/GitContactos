@@ -6,6 +6,20 @@ public class GestorContactos {
 	private static List<Contacto> contactos = new ArrayList<>();
 
 	public static void main(String[] args) {
+	    Contacto contacto1 = new Contacto();
+        Contacto contacto2 = new Contacto();
+        Contacto contacto3 = new Contacto();
+        Contacto contacto4 = new Contacto();
+
+        contacto1.setTelefono("23341018");
+        contacto2.setTelefono("57071052");
+        contacto3.setTelefono("23342924");
+        contacto4.setTelefono("23628138");
+        contactos.add(contacto1);
+        contactos.add(contacto2);
+        contactos.add(contacto3);
+        contactos.add(contacto4);
+
 		int opcion;
 		do {
 			System.out.print("\033[H\033[2J");
@@ -26,7 +40,7 @@ public class GestorContactos {
 					//crearContacto();
 					break;
 				case 2:
-					//eliminarContacto();
+					eliminarContacto();
 					break;
 				case 3:
 					//mostrarTodos();
@@ -45,7 +59,16 @@ public class GestorContactos {
 
 	private static void crearContacto() {}
 
-	private static void eliminarContacto() {}
+	private static void eliminarContacto() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("\u00BFQu\u00E9 n\u00FAmero quisiera eliminar?");
+		String numeroEliminar = scanner.next();
+        Contacto b = new Contacto();
+        b.setTelefono(numeroEliminar);
+        if(contactos.contains(b)) {
+            contactos.remove(b);
+        }
+	}
 
 	private static void mostrarTodos() {}
 
