@@ -44,13 +44,10 @@ public class GestorContactos {
 		} while(opcion != 0);
 	}
 
-	private static void crearContacto() {
+	private static void crearContacto() {		
 
+		String nombre, apellido,fechaNacimiento, telefono;		
 		
-
-		String nombre, apellido,fechaNacimiento, telefono;
-		int opcion=0;
-		while(opcion!=2){
 		Contacto contact = new Contacto();
 		System.out.println("Ingrese nombre: ");
 		nombre = scan.next();
@@ -60,21 +57,15 @@ public class GestorContactos {
 		apellido = scan.next();
 		contact.setApellido(apellido);
 
-		System.out.println("Ingrese fecha de nacimiento: ");
+		System.out.println("Ingrese fecha de nacimiento (DD/MM/AAAA): ");
 		fechaNacimiento = scan.next();
-		scan.next();
-		
 		contact.setFechaNacimiento(fechaNacimiento);
-
 		System.out.println("Ingrese numero de telefono: ");
 		telefono = scan.next();
 		contact.setTelefono(telefono);
 		
 		contactos.add(contact);
-
-		System.out.println("Ingresar nuevo contacto? (1 = si, 2 = no");
-		opcion = scan.nextInt();
-		}
+			
 
 	}
 
