@@ -46,11 +46,12 @@ public class GestorContactos {
 
 	private static void crearContacto() {
 
-		Contacto contact = new Contacto();
+		
 
 		String nombre, apellido,fechaNacimiento, telefono;
 		int opcion=0;
 		while(opcion!=2){
+		Contacto contact = new Contacto();
 		System.out.println("Ingrese nombre: ");
 		nombre = scan.next();
 		contact.setNombre(nombre);
@@ -61,6 +62,8 @@ public class GestorContactos {
 
 		System.out.println("Ingrese fecha de nacimiento: ");
 		fechaNacimiento = scan.next();
+		scan.next();
+		
 		contact.setFechaNacimiento(fechaNacimiento);
 
 		System.out.println("Ingrese numero de telefono: ");
